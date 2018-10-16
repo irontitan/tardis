@@ -1,5 +1,5 @@
 {
-  "name": "tardis",
+  "name": "@nxcd/tardis",
   "version": "1.0.0",
   "description": "Event sourcing framework to make developer's life easier",
   "main": "dist/index.js",
@@ -31,5 +31,8 @@
   "dependencies": {
     "@types/node": "^10.12.0",
     "bson-objectid": "^1.2.4"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
