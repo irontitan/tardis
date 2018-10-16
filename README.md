@@ -1,2 +1,4 @@
 # tardis
-Event sourcing toolkit
+Event sourcing library
+
+[Usage examples](src/examples)

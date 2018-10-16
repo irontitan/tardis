@@ -1,17 +1,16 @@
-import IEvent from "../interfaces/IEvent"
-import IReducer from "../interfaces/IReducer"
+import IEvent from '../interfaces/IEvent'
+import ICommitFunction from '../interfaces/ICommitFunction'
 
-export default class Reducer<I> implements IReducer<I> {
-  private knownEvents: IEvent<I>[]
+export default class Reducer<EntityInterface> {
+  private knownEvents: { [key: string]: ICommitFunction<EntityInterface, any> }
 
-  constructor(knownEvents: IEvent<I>[]) {
+  constructor(knownEvents: { [key: string]: ICommitFunction<EntityInterface, any> }) {
     this.knownEvents = knownEvents
   }
 
-  get(name: string): IEvent<I> {
-    const event = this.knownEvents.find(predicate)
-  }
-  reduce(state: I, events: IEvent<I>[]): I {
-    throw new Error('Method not implemented.');
+  reduce (state: EntityInterface, events: IEvent[]): EntityInterface {
+    return events.reduce<EntityInterface>((state: EntityInterface, event: IEvent) => {
+      return this.knownEvents[event.name](state, event)
+    }, state)
   }
 }
