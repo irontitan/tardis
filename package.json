@@ -1,6 +1,6 @@
 {
   "name": "@nxcd/tardis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Event sourcing framework to make developer's life easier",
   "main": "dist/index.js",
   "scripts": {
