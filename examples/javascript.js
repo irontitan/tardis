@@ -1,7 +1,7 @@
 'use strict'
 
 const crypto = require('crypto')
-const { Event, Reducer } = require('../../dist')
+const { Event, Reducer } = require('../dist')
 
 function createId () {
   return crypto.randomBytes(12).toString('hex')

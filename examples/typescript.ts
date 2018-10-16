@@ -1,8 +1,8 @@
 import crypto from 'crypto'
-import Event from '../classes/Event'
-import Reducer from '../classes/Reducer'
+import Event from '../src/classes/Event'
+import Reducer from '../src/classes/Reducer'
 
-function createId (): string {
+function createId(): string {
   return crypto.randomBytes(12).toString('hex')
 }
 
@@ -12,14 +12,14 @@ class Person {
   updatedAt: Date | null = null
   updatedBy: string | null = null
 
-  static create (name: string, user: string, email: string) {
+  static create(name: string, user: string, email: string) {
     return [
       new PersonWasCreated({ name }, user),
       new PersonEmailWasAdded({ email }, user)
     ]
   }
 
-  public get state () {
+  public get state() {
     return {
       name: this.name,
       email: this.email,
@@ -33,12 +33,12 @@ class PersonWasCreated extends Event {
   static eventName = 'person-was-created'
   user: string
 
-  constructor (data: { name: string }, user: string) {
+  constructor(data: { name: string }, user: string) {
     super(createId(), PersonWasCreated.eventName, data)
     this.user = user
   }
 
-  static commit (state: Person, event: PersonWasCreated): Person {
+  static commit(state: Person, event: PersonWasCreated): Person {
     state.name = event.data.name
     state.updatedAt = event.timestamp
     state.updatedBy = event.user
@@ -50,12 +50,12 @@ class PersonEmailWasAdded extends Event {
   static eventName = 'person-email-was-added'
   user: string
 
-  constructor (data: { email: string }, user: string) {
+  constructor(data: { email: string }, user: string) {
     super(createId(), PersonEmailWasAdded.eventName, data)
     this.user = user
   }
 
-  static commit (state: Person, event: PersonEmailWasAdded): Person {
+  static commit(state: Person, event: PersonEmailWasAdded): Person {
     state.email = event.data.email
     state.updatedAt = event.timestamp
     state.updatedBy = event.user
@@ -64,8 +64,8 @@ class PersonEmailWasAdded extends Event {
 }
 
 const personReducer = new Reducer<Person>({
-  [PersonWasCreated.eventName]: PersonWasCreated.commit,
-  [PersonEmailWasAdded.eventName]: PersonEmailWasAdded.commit
+  [ PersonWasCreated.eventName ]: PersonWasCreated.commit,
+  [ PersonEmailWasAdded.eventName ]: PersonEmailWasAdded.commit
 })
 
 const events = [
