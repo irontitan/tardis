@@ -1,16 +1,6 @@
 os:
   - linux
 language: node_js
-
-node_js:
-  - "node"
-  - "10"
-  - "9"
-  - "8"
-
-matrix:
-  fast_finish: true
-
 jobs:
   include:
     - stage: "Build Typescript"
@@ -19,8 +9,13 @@ jobs:
         - npm i
       script:
         - npm run build:clean
+      node_js:
+        - "node"
+        - "10"
+        - "9"
+        - "8"
     - stage: "NPM Publish"
-      node_js: "8"
+      node_js: "10"
       deploy:
         provider: npm
         email: $NPM_EMAIL_ADDR
