@@ -1,21 +1,23 @@
 os:
   - linux
 language: node_js
+
+node_js:
+  - "node"
+  - "10"
+  - "9"
+  - "8"
+
+before_script:
+  - npm i -g typescript
+  - npm i
+
+script:
+  - npm run build:clean
+
 jobs:
   include:
-    - stage: "Build Typescript"
-      before_script:
-        - npm i -g typescript
-        - npm i
-      script:
-        - npm run build:clean
-      node_js:
-        - "node"
-        - "10"
-        - "9"
-        - "8"
-    - stage: "NPM Publish"
-      node_js: "10"
+    - stage: "Deploy"
       deploy:
         provider: npm
         email: $NPM_EMAIL_ADDR
