@@ -1,4 +1,4 @@
-export default interface IEvent {
+export interface IEvent {
   id: string
   name: string,
   data: any,

@@ -1,16 +1,16 @@
-import IEvent from '../interfaces/IEvent'
+import { IEvent } from '../interfaces/IEvent'
+import ObjectId from 'bson-objectid'
 
-export default class Event implements IEvent {
+export class Event implements IEvent {
   id: string
   name: string
   data: any
   timestamp: Date
 
-  constructor (id: string, name: string, data: any) {
-    this.id = id
+  constructor(name: string, data: any, id?: string) {
+    this.id = id || new ObjectId().toHexString()
     this.name = name
     this.data = data
     this.timestamp = new Date()
   }
 }
-
