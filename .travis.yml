@@ -18,12 +18,14 @@ before_script:
 script:
   - npm run build:clean
 
-# deploy:
-#   provider: script
-#   script: "npm publish"
-#   skip_cleanup: true
-#   on:
-#     tags: true
+deploy:
+  provider: npm
+  email: $NPM_EMAIL_ADDR
+  api_key: $NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
 
 notifications:
   email:
