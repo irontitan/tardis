@@ -1,0 +1,34 @@
+os:
+  - linux
+language: node_js
+
+node_js:
+  - "node"
+  - "10"
+  - "9"
+  - "8"
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - npm i -g typescript
+  - npm i
+
+script:
+  - npm run build:clean
+
+# deploy:
+#   provider: script
+#   script: "npm publish"
+#   skip_cleanup: true
+#   on:
+#     tags: true
+
+notifications:
+  email:
+    recipients:
+    - lucas.santos@nxcd.com.br
+    - rogerio.munhoz@nxcd.com.br
+    on_success: change
+    on_failure: always
