@@ -2,6 +2,12 @@
 
 > Event sourcing library to help developers abstract core concepts
 
+[![Build Status](https://travis-ci.org/nxcd/tardis.svg?branch=master)](https://travis-ci.org/nxcd/tardis)
+[![GitHub license](https://img.shields.io/github/license/nxcd/tardis.svg)](https://github.com/nxcd/tardis/blob/master/LICENSE)
+[![Javascript code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Github All Releases](https://img.shields.io/github/downloads/nxcd/tardis/total.svg)](https://github.com/nxcd/tardis)
+[![GitHub package version](https://img.shields.io/github/package-json/v/nxcd/tardis.svg)](https://github.com/nxcd/tardis)
+
+
 ## Summary
 <!-- TOC -->
 
