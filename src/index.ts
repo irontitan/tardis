@@ -1,4 +1,4 @@
-import { Event } from './classes/Event'
-import { Reducer } from './classes/Reducer'
-
-export { Event, Reducer }
+export { Event } from './classes/Event'
+export { Reducer } from './classes/Reducer'
+export { IEvent } from './interfaces/IEvent'
+export { ICommitFunction } from './interfaces/ICommitFunction'
