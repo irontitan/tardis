@@ -2,11 +2,15 @@
 
 > Event sourcing library to help developers abstract core concepts
 
+## Summary
 <!-- TOC -->
 
 - [Tardis](#tardis)
+  - [Summary](#summary)
   - [Instalation](#instalation)
   - [Usage](#usage)
+    - [Javascript:](#javascript)
+    - [Typescript:](#typescript)
   - [Core concepts](#core-concepts)
     - [Event](#event)
       - [Events with custom ID's](#events-with-custom-ids)
@@ -30,7 +34,7 @@ $ yarn add @nxcd/tardis
 
 ## Usage
 
-**Javascript**:
+### Javascript:
 
 > Person.js
 
@@ -154,7 +158,7 @@ console.log(person.state)
 */
 ```
 
-**Typescript**:
+### Typescript:
 
 > Person.ts
 
