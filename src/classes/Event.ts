@@ -2,10 +2,10 @@ import { IEvent } from '../interfaces/IEvent'
 import ObjectId from 'bson-objectid'
 
 export class Event implements IEvent {
-  id: string
-  name: string
-  data: any
-  timestamp: Date
+  readonly id: string
+  readonly name: string
+  readonly data: any
+  readonly timestamp: Date
 
   constructor(name: string, data: any, id?: string) {
     this.id = id || new ObjectId().toHexString()
