@@ -1,6 +1,6 @@
-export interface IEvent {
+export interface IEvent<TData> {
   id: string
   name: string,
-  data: any,
+  data: TData,
   timestamp: Date
 }

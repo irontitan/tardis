@@ -201,11 +201,15 @@ export default class Person {
 ```ts
 import { Event } from '@nxcd/tardis'
 
-export default class PersonWasCreated extends Event {
+export interface IPersonCreationParams {
+  name: string
+}
+
+export default class PersonWasCreated extends Event<IPersonCreationParams> {
   static eventName = 'person-was-created'
   user: string
 
-  constructor(data: { name: string }, user: string) {
+  constructor(data: IPersonCreationParams, user: string) {
     super(PersonWasCreated.eventName, data)
     this.user = user
   }
@@ -224,7 +228,7 @@ export default class PersonWasCreated extends Event {
 ```ts
 import { Event } from '@nxcd/tardis'
 
-export default class PersonEmailWasAdded extends Event {
+export default class PersonEmailWasAdded extends Event<any> {
   static eventName = 'person-email-was-added'
   user: string
 
