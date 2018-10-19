@@ -6,8 +6,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist",
-    "build:clean": "npm run clean && npm run build",
-    "prepublish": "npm run build:clean"
+    "build:clean": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",

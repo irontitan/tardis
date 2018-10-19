@@ -9,8 +9,8 @@ export class Reducer<EntityInterface> {
     this.knownEvents = knownEvents
   }
 
-  reduce(state: EntityInterface, events: IEvent[]): EntityInterface {
-    return events.reduce<EntityInterface>((state: EntityInterface, event: IEvent) => {
+  reduce(state: EntityInterface, events: IEvent<any>[]): EntityInterface {
+    return events.reduce<EntityInterface>((state: EntityInterface, event: IEvent<any>) => {
       const clonedState = cloneDeep(state)
       return this.knownEvents[ event.name ](clonedState, event)
     }, state)
