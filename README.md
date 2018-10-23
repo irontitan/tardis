@@ -62,6 +62,7 @@ class Person {
       new PersonEmailWasAdded({ email }, user)
     ]
   }
+
   get state () {
     return { ...this }
   }
