@@ -1,4 +1,6 @@
-![Tardis Logo](./assets/tardis logo.png)
+<div style='width: 100%; text-align: center;'>
+  <img style='margin: 0 auto;' src='./assets/tardis-logo.png' width="450" height="250"/>
+</div>
 
 > Event sourcing library to help developers abstract core concepts
 
