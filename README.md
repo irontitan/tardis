@@ -1,4 +1,4 @@
-# Tardis
+![Tardis Logo](./assets/tardis logo.png)
 
 > Event sourcing library to help developers abstract core concepts
 
