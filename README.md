@@ -8,6 +8,7 @@
 [![GitHub license](https://img.shields.io/github/license/nxcd/tardis.svg)](https://github.com/nxcd/tardis/blob/master/LICENSE)
 [![Javascript code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Github All Releases](https://img.shields.io/github/downloads/nxcd/tardis/total.svg)](https://github.com/nxcd/tardis)
 [![GitHub package version](https://img.shields.io/github/package-json/v/nxcd/tardis.svg)](https://github.com/nxcd/tardis) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/506aa959a662461193b1d65e34225016)](https://www.codacy.com/app/khaosdoctor/tardis?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nxcd/tardis&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/nxcd/tardis/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nxcd/tardis?targetFile=package.json)
 
 
 ## Summary
