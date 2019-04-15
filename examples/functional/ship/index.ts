@@ -7,7 +7,7 @@ import { ShipWasCreatedEvent, ShipDockedEvent } from './events'
  * Using ship manager (eg. creating new)
  */
 const ship = ShipManager.create(new ObjectId(), 'Pérola Negra', 'A')
-const dockedShip = ShipManager.dock(ship, 'Seattle')
+const dockedShip = ShipManager.dock(ship, 'Seattle', 'rjmunhoz')
 
 console.log(dockedShip.state)
 // {
@@ -30,7 +30,7 @@ const reducer = createReducer({
 
 const eventsFromDatabase = [
   ShipWasCreatedEvent.create({ id: new ObjectId(), name: 'Pérola Negra', type: 'A' }),
-  ShipDockedEvent.create({ port: 'Seattle' })
+  ShipDockedEvent.create({ port: 'Seattle' }, 'rjmunhoz')
 ]
 
 const shipState = reducer.reduce({}, eventsFromDatabase)

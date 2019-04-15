@@ -31,8 +31,8 @@ function create (id: ObjectId, name: string, type: ShipType): Ship {
   }
 }
 
-function dock (ship: Ship, port: string): Ship {
-  const shipDockedEvent = ShipDockedEvent.create({ port })
+function dock (ship: Ship, port: string, user: string): Ship {
+  const shipDockedEvent = ShipDockedEvent.create({ port }, user)
 
   return {
     _id: ship._id,

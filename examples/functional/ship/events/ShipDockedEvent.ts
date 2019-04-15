@@ -7,7 +7,9 @@ type ShipDockedEventData = {
   port: string
 }
 
-export const create = createEventFactory<ShipDockedEventData>(EVENT_NAME)
+const factory = createEventFactory<ShipDockedEventData>(EVENT_NAME)
+
+export const create = (params: ShipDockedEventData, user: string) => ({ ...factory(params), user })
 
 export const commit: CommitFunction<ShipDockedEventData, ShipState> = (state: ShipState, event) => {
   return {
