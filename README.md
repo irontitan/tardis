@@ -14,16 +14,16 @@
 ## Summary
 <!-- TOC -->
 
-- [Tardis](#tardis)
-  - [Summary](#summary)
-  - [Instalation](#instalation)
-  - [Usage](#usage)
-    - [Javascript:](#javascript)
-    - [Typescript:](#typescript)
-  - [Core concepts](#core-concepts)
-    - [Event](#event)
-      - [Events with custom ID's](#events-with-custom-ids)
-    - [Reducer](#reducer)
+- [Summary](#summary)
+- [Instalation](#instalation)
+- [Usage](#usage)
+  - [Functional Style](#functional-style)
+  - [Javascript:](#javascript)
+  - [Typescript:](#typescript)
+- [Core concepts](#core-concepts)
+  - [Event](#event)
+    - [Events with custom ID's](#events-with-custom-ids)
+  - [Reducer](#reducer)
 
 <!-- /TOC -->
 
@@ -42,6 +42,12 @@ $ yarn add @nxcd/tardis
 ```
 
 ## Usage
+
+### Functional Style
+
+Since version 2.1.0, tardis supports being used in functional style code. Since things are quite different, we've decied to create another file for this kind of usage. Just follow the link below:
+
+[Functional usage](docs/FP.md)
 
 ### Javascript:
 
