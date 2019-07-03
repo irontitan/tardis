@@ -1,6 +1,6 @@
 {
   "name": "@irontitan/tardis",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Event sourcing framework to make developer's life easier",
   "main": "dist/index.js",
   "scripts": {
