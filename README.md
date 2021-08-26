@@ -4,11 +4,11 @@
 
 > Event sourcing library to help developers abstract core concepts
 
-[![Build Status](https://travis-ci.org/nxcd/tardis.svg?branch=master)](https://travis-ci.org/nxcd/tardis)
-[![GitHub license](https://img.shields.io/github/license/nxcd/tardis.svg)](https://github.com/nxcd/tardis/blob/master/LICENSE)
-[![Javascript code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Github All Releases](https://img.shields.io/github/downloads/nxcd/tardis/total.svg)](https://github.com/nxcd/tardis)
-[![GitHub package version](https://img.shields.io/github/package-json/v/nxcd/tardis.svg)](https://github.com/nxcd/tardis) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/506aa959a662461193b1d65e34225016)](https://www.codacy.com/app/khaosdoctor/tardis?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nxcd/tardis&amp;utm_campaign=Badge_Grade)
-[![Known Vulnerabilities](https://snyk.io/test/github/nxcd/tardis/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nxcd/tardis?targetFile=package.json)
+[![Build Status](https://travis-ci.org/irontitan/tardis.svg?branch=master)](https://travis-ci.org/nxcd/tardis)
+[![GitHub license](https://img.shields.io/github/license/irontitan/tardis.svg)](https://github.com/nxcd/tardis/blob/master/LICENSE)
+[![Javascript code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Github All Releases](https://img.shields.io/github/downloads/irontitan/tardis/total.svg)](https://github.com/nxcd/tardis)
+[![GitHub package version](https://img.shields.io/github/package-json/v/irontitan/tardis.svg)](https://github.com/nxcd/tardis) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/506aa959a662461193b1d65e34225016)](https://www.codacy.com/app/khaosdoctor/tardis?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nxcd/tardis&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/irontitan/tardis/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nxcd/tardis?targetFile=package.json)
 
 
 ## Summary
@@ -33,12 +33,12 @@ Simply run
 
 **NPM:**
 ```bash
-$ npm install @nxcd/tardis
+$ npm install @irontitan/tardis
 ```
 
 **Yarn:**
 ```bash
-$ yarn add @nxcd/tardis
+$ yarn add @irontitan/tardis
 ```
 
 ## Usage
@@ -77,7 +77,7 @@ module.exports = Person
 > PersonWasCreatedEvent.js
 
 ```js
-const { Event } = require('@nxcd/tardis')
+const { Event } = require('@irontitan/tardis')
 
 class PersonWasCreated extends Event {
   static get eventName () { return 'person-was-created' }
@@ -101,7 +101,7 @@ module.exports = PersonWasCreated
 > PersonEmailWasAddedEvent.js
 
 ```js
-const { Event } = require('@nxcd/tardis')
+const { Event } = require('@irontitan/tardis')
 
 class PersonEmailWasAdded extends Event {
   static get eventName () { return 'person-email-was-added' }
@@ -125,7 +125,7 @@ module.exports = PersonEmailWasAdded
 > index.js
 
 ```js
-const { Reducer } = require('@nxcd/tardis')
+const { Reducer } = require('@irontitan/tardis')
 const Person = require('./Person')
 const PersonWasCreated = require('./PersonWasCreatedEvent')
 const PersonEmailWasAdded = require('./PersonEmailWasAddedEvent')
@@ -203,7 +203,7 @@ export default class Person {
 > PersonWasCreatedEvent.ts
 
 ```ts
-import { Event } from '@nxcd/tardis'
+import { Event } from '@irontitan/tardis'
 
 export interface IPersonCreationParams {
   name: string
@@ -230,7 +230,7 @@ export default class PersonWasCreated extends Event<IPersonCreationParams> {
 > PersonEmailWasAddedEvent.ts
 
 ```ts
-import { Event } from '@nxcd/tardis'
+import { Event } from '@irontitan/tardis'
 
 export default class PersonEmailWasAdded extends Event<any> {
   static eventName = 'person-email-was-added'
@@ -253,7 +253,7 @@ export default class PersonEmailWasAdded extends Event<any> {
 > index.ts
 
 ```ts
-import { Reducer } from '@nxcd/tardis'
+import { Reducer } from '@irontitan/tardis'
 import Person from './Person'
 import PersonWasCreated from './PersonWasCreatedEvent'
 import PersonEmailWasAdded from './PersonEmailWasAddedEvent'
@@ -346,7 +346,7 @@ So, let's construct an Event:
 **Typescript**:
 
 ```ts
-import { Event } from '@nxcd/tardis'
+import { Event } from '@irontitan/tardis'
 
 class PersonWasCreated extends Event { // Our event's class
   static eventName = 'person-was-created' // Event name
@@ -375,7 +375,7 @@ class PersonWasCreated extends Event { // Our event's class
 **Javascript**
 
 ```js
-const { Event } = require('@nxcd/tardis')
+const { Event } = require('@irontitan/tardis')
 
 class PersonWasCreated extends Event {
   static get eventName () { return 'person-was-created' }
@@ -401,7 +401,7 @@ By default, the Event class will generate a MongoDB-Like ObjectID. If you wish t
 **Typescript**
 
 ```ts
-import { Event } from '@nxcd/tardis'
+import { Event } from '@irontitan/tardis'
 import crypto from 'crypto'
 
 function createId (): string {
@@ -430,7 +430,7 @@ class PersonWasCreated extends Event {
 
 ```js
 const crypto = require('crypto')
-const { Event } = require('@nxcd/tardis')
+const { Event } = require('@irontitan/tardis')
 
 function createId () {
   return crypto.randomBytes(12).toString('hex')
@@ -463,7 +463,7 @@ All reducers must be instantiated by passing an object of known events and it's 
 
 ```ts
 import { Person } from './your/entity/path'
-import { Reducer } from '@nxcd/tardis'
+import { Reducer } from '@irontitan/tardis'
 import { PersonWasCreated, PersonWasUpdated } from './your/path/to/events'
 
 const personReducer = new Reducer<Person>({
@@ -476,7 +476,7 @@ const personReducer = new Reducer<Person>({
 
 ```js
 const { Person } = require('./your/entity/path')
-const { Reducer } = require('@nxcd/tardis')
+const { Reducer } = require('@irontitan/tardis')
 const { PersonWasCreated, PersonWasUpdated } = require('./your/path/to/events')
 
 const personReducer = new Reducer({
@@ -491,7 +491,7 @@ Now we have an instance of the reducer which will only apply commits to that spe
 
 ```ts
 import { Person } from './your/entity/path'
-import { Reducer } from '@nxcd/tardis'
+import { Reducer } from '@irontitan/tardis'
 import { PersonWasCreated, PersonWasUpdated } from './your/path/to/events'
 
 const events = [...Person.create('John Doe', 'jdoe')]
@@ -534,7 +534,7 @@ console.log(person.state)
 
 ```js
 const { Person } = require('./your/entity/path')
-const { Reducer } = require('@nxcd/tardis')
+const { Reducer } = require('@irontitan/tardis')
 const { PersonWasCreated, PersonWasUpdated } = require('./your/path/to/events')
 
 const events = [...Person.create('John Doe', 'jdoe')]
